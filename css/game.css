@@ -1,0 +1,27 @@
+.selection-container {
+display: flex;
+width: 100%;
+margin-bottom: 1rem ;
+font-size: 1.4rem;
+border: 0.1rem solid rgb(67, 63, 63, 0.25);
+background-color: white;
+}
+
+.selection-container:hover {
+    cursor:pointer;
+    box-shadow:0 1rem 1rem 0 #605d5d;
+    transform: translateY(-0.2rem);
+    transition: 140ms;
+}
+
+.selection-prefix {
+    padding: 1.6rem 2.6rem;
+    background-color: deepskyblue;
+    color: white;
+}
+
+.selection-text {
+    padding: 1.5rem;
+    width: 100%;
+}
+
