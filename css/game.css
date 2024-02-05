@@ -25,3 +25,26 @@ background-color: white;
     width: 100%;
 }
 
+.correct {
+    background-color: green;
+}
+
+.incorrect {
+    background-color: red;
+}
+
+/* Display Info - Timer - Score */
+
+#displayinfo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.displayinfo-prefix {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.displayinfo-main-text {
+    text-align: center;
+}

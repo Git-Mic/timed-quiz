@@ -1,12 +1,15 @@
 const question = document.getElementById("question");
 const selections = Array.from(document.getElementsByClassName("selection-text"));
-console.log(selections)
+const questionCounterText = document.getElementById('questionCounter');
+const scoreText = document.getElementById('score');
 
 var currentQuestion = {};
 var answerAcceptance = false;
-var counter = 0;
+var score = 0;
+var questionCounter = 0;
 var questionBank = [];
 
+//Array of possible questions that will display to the user
 var questions = [
     {
         question: "What is the name of Simba's father in The Lion King?",
@@ -87,12 +90,12 @@ var questions = [
         choice1: "Jake Gyllenhaal",
         choice2: "Heath Ledger",
         choice3: "Johnny Depp",
-        Choice4: "Leonardo DiCaprio",
+        choice4: "Leonardo DiCaprio",
         answer: 3
     }
 
 
-]
+];
 
 // Constants 
 const CORRECT_POINTS = 10;
@@ -102,7 +105,6 @@ startGame = () => {
     questionCounter = 0;
     score = 0;
     questionBank = [...questions];
-    console.log(questionBank)
     obtainNewQuestion();
 
 };
@@ -110,10 +112,11 @@ startGame = () => {
 obtainNewQuestion = () => {
 
         if(questionBank.length === 0 || questionCounter >= MAX_QUESTIONS){
-          //navigate to end page
-          return window.location.assign("/final.html")  
+          //navigates to final page
+          return window.location.assign("/final.html");  
         }
     questionCounter++;
+    questionCounterText.innerText = questionCounter + "/" + MAX_QUESTIONS;
     const questionIndex = Math.floor(Math.random() * questionBank.length);
     currentQuestion = questionBank[questionIndex];
     question.innerText = currentQuestion.question;
@@ -131,14 +134,30 @@ obtainNewQuestion = () => {
 
 selections.forEach(choice => {
     choice.addEventListener('click', e => {
-        if(!answerAcceptance) return;
+        if (!answerAcceptance) return;
 
         answerAcceptance = false;
         const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset["number"];
-        console.log(selectedAnswer);
-        obtainNewQuestion();
+        
+       const applyClass = 
+       selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
+       
+       if(applyClass === 'correct') {
+        increaseScore(CORRECT_POINTS);
+       }
+            selectedChoice.parentElement.classList.add(applyClass);
+
+            setTimeout( () => {
+            selectedChoice.parentElement.classList.remove(applyClass);
+            obtainNewQuestion();
+            }, 1000);
     });
 });
+
+increaseScore = num =>{
+    score += num;
+    scoreText.innerText = score;
+};
 
 startGame();
