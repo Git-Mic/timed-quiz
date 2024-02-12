@@ -80,7 +80,7 @@ h3 {
 }
 
 /* Button Code*/
-.btn {
+.bttn {
     font-size: 1.6rem;
     width: 20rem;
     padding: 1rem 0;
@@ -92,7 +92,7 @@ h3 {
     background-color: white
 }
 
-.btn:hover {
+.bttn:hover {
     cursor:pointer;
     box-shadow:0 1rem 1rem 0 #605d5d;
     transform: translateY(-0.2rem);
@@ -101,8 +101,27 @@ h3 {
     
 }
 
-.btn[disabled]:hover {
+.bttn[disabled]:hover {
     cursor: not-allowed;
     box-shadow: none;
     transform: none;
+}
+
+/* Form Code */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+input {
+    margin-bottom: 1rem;
+    width: 15rem;
+    padding: 2rem;
+    font-size: 1.5rem;
+    border: none deepskyblue;
+
+
+
 }

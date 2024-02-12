@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Score</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <main class="contain">
+        <section id="final" class="flex-column flex-center">
+            <h1 id="finalHiScore">0</h1>
+            <form>
+                <input
+                type="text"
+                name="playername"
+                id="playername"
+                placeholder="Player Name">
+                <button type="submit" class="bttn" id="saveYourScore"
+                onclick="saveHiScore(event)"
+                disabled>Save</button>
+            </form>
+            <a class="bttn" href="./game.html">Start Over?</a>
+            <a class="bttn" href="./index.html">Home Screen</a>
+        </section>
+    </main>
+    <script src="./js/finalpage.js"></script>
+</body>
+</html>
