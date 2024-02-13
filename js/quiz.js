@@ -112,8 +112,9 @@ startGame = () => {
 obtainNewQuestion = () => {
 
         if(questionBank.length === 0 || questionCounter >= MAX_QUESTIONS){
+            localStorage.setItem('latestScore', score);
           //navigates to final page
-          return window.location.assign("/final.html");  
+          return window.location.assign("./finalpage.html");  
         }
     questionCounter++;
     questionCounterText.innerText = questionCounter + "/" + MAX_QUESTIONS;

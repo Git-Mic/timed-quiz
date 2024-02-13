@@ -1,0 +1,16 @@
+#listOfScores {
+    padding-left: 0;
+    list-style:none;
+    margin-bottom: 3rem;
+}
+
+.hi-score {
+    font-size: 3rem;
+    font-weight: 600;
+    font-family: fantasy;
+    margin-bottom: 0.6rem;
+}
+
+.hi-score:hover {
+    transform: scale(1.050);
+}

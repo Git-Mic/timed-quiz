@@ -20,7 +20,7 @@ h4 {
 
 h1 {
     font-size: 5.4rem;
-    color: deepskyblue;
+    color: navy;
     margin-bottom: 5rem;
 }
 
@@ -85,10 +85,10 @@ h3 {
     width: 20rem;
     padding: 1rem 0;
     text-align: center;
-    border:.2rem solid deepskyblue;
+    border:.2rem solid navy;
     margin-bottom: 1.5rem;
     text-decoration: none;
-    color: deepskyblue;
+    color: navy;
     background-color: white
 }
 
